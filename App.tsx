@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import Routes from './src/navigation';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import Routes from './src/navigation/AppNavigator';
 import {
   useFonts,
   Poppins_400Regular,
@@ -23,8 +24,10 @@ export default function App() {
   }
 
   return (
+    <GestureHandlerRootView>
       <NavigationContainer>
         <Routes />
       </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }

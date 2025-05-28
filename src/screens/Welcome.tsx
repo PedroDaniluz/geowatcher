@@ -1,8 +1,14 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 import SubmitButton from '../components/SubmitButton';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../types/navigation';
+
+type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 
 const Welcome = () => {
+    const navigation = useNavigation<NavigationProps>();
     return (
         <GradientContainer
             colors={['#F5F5F5', '#8CCBFF']}
@@ -10,7 +16,7 @@ const Welcome = () => {
             end={{ x: 0, y: 1 }}
         >
             <Logo source={require('../../assets/logo.png')} />
-            <SubmitButton text='Aceder ao painel' onClick={() => console.log('click')} />
+            <SubmitButton text='Aceder ao painel' onClick={() => navigation.navigate('Main')} />
         </GradientContainer>
     );
 };
