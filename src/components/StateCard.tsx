@@ -39,7 +39,6 @@ const Card = styled(View)`
 `;
 
 const CardText = styled(View)`
-    flex: 1;
     gap: 8px;
 `;
 
