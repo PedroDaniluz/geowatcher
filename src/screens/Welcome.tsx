@@ -1,6 +1,8 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 import SubmitButton from '../components/SubmitButton';
+
+// React Navigation
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../types/navigation';

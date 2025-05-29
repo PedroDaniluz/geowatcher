@@ -5,13 +5,21 @@ import theme from "../styles/theme";
 import StateCard from "../components/StateCard";
 import LastMeasureCard from "../components/LastMeasureCard";
 
+// React Navigation
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../types/navigation';
+
+type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'Home'>;
+
 const Home = () => {
+    const navigation = useNavigation<NavigationProps>();
     return (
         <Container>
             <Header>Painel de Riscos</Header>
             <StateCard isSafe = {true} />
             <LastMeasureCard locality="Aclimação, São Paulo - SP" inclination={30} humity={54} />
-            <Pressable onPress={() => console.log('click')} style={{ width: '100%' }}>
+            <Pressable onPress={() => navigation.navigate('NewMeasureForm')} style={{ width: '100%' }}>
                 {({ pressed }) => (
                     <StyledButton pressed={pressed}>
                         <Ionicons name="add-circle-outline" size={24} color={theme.colors.primary} />
@@ -45,7 +53,7 @@ const StyledButton = styled(View)<{ pressed: boolean }>`
     flex-direction: row;
     padding: 16px 12px;
     border-radius: 6px;
-    opacity: ${({ pressed }) => (pressed ? 0.9 : 1)};
+    opacity: ${({ pressed }) => (pressed ? 0.8 : 1)};
 `;
 
 const ButtonText = styled(Text)`

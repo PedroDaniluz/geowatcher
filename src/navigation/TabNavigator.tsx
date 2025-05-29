@@ -2,8 +2,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import Home from '../screens/Home';
 import theme from '../styles/theme';
+
+// Telas
+import Home from '../screens/Home';
+import NewMeasureForm from '../screens/NewMeasureForm';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -12,7 +15,7 @@ function HomeWithFormStack() {
     return (
         <HomeStack.Navigator screenOptions={{ headerShown: false }}>
             <HomeStack.Screen name="Home" component={Home} />
-            {/* Formulário de nova medição aqui */}
+            <HomeStack.Screen name="NewMeasureForm" component={NewMeasureForm} />
         </HomeStack.Navigator>
     );
 }
