@@ -7,6 +7,7 @@ import theme from '../styles/theme';
 // Telas
 import Home from '../screens/Home';
 import NewMeasureForm from '../screens/NewMeasureForm';
+import ReportForm from '../screens/ReportForm';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -65,19 +66,13 @@ export default function TabRoutes() {
             </Tab.Screen>
             <Tab.Screen
                 name="Reportar"
-                listeners={{
-                    tabPress: (e) => {
-                        e.preventDefault();
-                        Alert.alert('Reportar', 'Funcionalidade ainda não implementada.');
-                    },
-                }}
+                component={ReportForm}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="alert-circle-outline" size={size} color={color} />
                     ),
                 }}
             >
-                {() => null}
             </Tab.Screen>
         </Tab.Navigator>
     );

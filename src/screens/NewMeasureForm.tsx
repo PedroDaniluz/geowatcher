@@ -1,57 +1,69 @@
 import { useState } from "react";
-import { View, Text, Pressable } from "react-native";
+import { TouchableWithoutFeedback, Keyboard, View, Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import styled from "styled-components";
 import theme from "../styles/theme";
+import InputField from "../components/InputField";
+import SubmitButton from "../components/SubmitButton";
 
 // React Navigation
 import { RootStackParamList } from '../types/navigation';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import InputField from "../components/InputField";
-
 type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'NewMeasureForm'>;
 
 const NewMeasureForm = () => {
-    const [humity, setHumity] = useState('');
+    const [humidity, setHumidity] = useState('');
     const [inclination, setInclination] = useState('');
-    const [observation, setObservation] = useState('');
+    const [notes, setNotes] = useState('');
     const navigation = useNavigation<NavigationProps>();
     return (
-        <Container>
-            <Pressable onPress={() => navigation.goBack()}>
-                {({ pressed }) => (
-                    <BackButton pressed={pressed}>
-                        <Ionicons
-                            name="chevron-back-outline"
-                            size={32}
-                            color={theme.colors.primary}
-                        />
-                    </BackButton>
-                )}
-            </Pressable>
-            <Header>Insira os dados dos sensores</Header>
-            <InputField
-                title="Umidade"
-                placeholder="Insira o valor de umidade"
-                value={humity}
-                onChangeText={setHumity}
-                isNumeric
-            />
-            <InputField
-                title="Inclinação"
-                placeholder="Insira o valor de inclinação"
-                value={inclination}
-                onChangeText={setInclination}
-                isNumeric
-            />
-            <InputField
-                title="Observações"
-                placeholder="Insira as observações"
-                value={observation}
-                onChangeText={setObservation}
-            />
-        </Container>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <Container>
+                <Pressable onPress={() => navigation.goBack()} style={{ width: 40}}>
+                    {({ pressed }) => (
+                        <BackButton pressed={pressed}>
+                            <Ionicons
+                                name="chevron-back-outline"
+                                size={32}
+                                color={theme.colors.primary}
+                            />
+                        </BackButton>
+                    )}
+                </Pressable>
+                <Header>Insira os dados dos sensores</Header>
+                <InputField
+                    title="Umidade"
+                    placeholder="Insira o valor de umidade"
+                    value={humidity}
+                    onChangeText={setHumidity}
+                    isNumeric
+                />
+                <InputField
+                    title="Inclinação"
+                    placeholder="Insira o valor de inclinação"
+                    value={inclination}
+                    onChangeText={setInclination}
+                    isNumeric
+                />
+                <InputField
+                    title="Observações"
+                    placeholder="Insira as observações"
+                    value={notes}
+                    onChangeText={setNotes}
+                />
+                <SubmitButton
+                    text="Registrar medição"
+                    onClick={() => {
+                        console.log("Dados salvos:", {
+                            humidity,
+                            inclination,
+                            notes,
+                        });
+                    }}
+                />
+            </Container>
+        </TouchableWithoutFeedback>
     );
 }
 
