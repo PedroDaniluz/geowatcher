@@ -9,7 +9,8 @@
   <a href="#colaboradores">Participantes</a> •
   <a href="#pré-requisitos">Pré-requisitos</a> •
   <a href="#instalação">Instalação</a> •
-  <a href="#rodando-o-projeto">Rodando o Projeto</a>
+  <a href="#rodando-o-projeto">Rodando o Projeto</a> •
+  <a href="#uso">Como usar</a>
 </div>
 
 <br>
