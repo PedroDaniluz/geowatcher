@@ -4,4 +4,5 @@ export type RootStackParamList = {
   Home: undefined;
   NewMeasureForm: undefined;
   ReportForm: undefined;
+  History: undefined;
 };

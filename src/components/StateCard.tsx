@@ -3,11 +3,11 @@ import { Ionicons } from '@expo/vector-icons';
 import styled from "styled-components";
 import theme from "../styles/theme";
 
-interface CardProps {
+interface StateCardProps {
     isSafe: boolean;
 }
 
-const StateCard: React.FC<CardProps> = ({ isSafe }) => {
+const StateCard: React.FC<StateCardProps> = ({ isSafe }) => {
     return (
         <Card>
             <CardText>

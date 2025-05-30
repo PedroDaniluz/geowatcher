@@ -1,15 +1,14 @@
 import { View, Text, Image } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
 import styled from "styled-components";
 import theme from "../styles/theme";
 
-interface CardProps {
+interface LastMeasureCardProps {
     locality: string;
     humity: number;
     inclination: number;
 }
 
-const StateCard: React.FC<CardProps> = ({ locality, humity, inclination }) => {
+const StateCard: React.FC<LastMeasureCardProps> = ({ locality, humity, inclination }) => {
     return (
         <Card>
             <View>

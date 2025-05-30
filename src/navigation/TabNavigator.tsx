@@ -8,6 +8,7 @@ import theme from '../styles/theme';
 import Home from '../screens/Home';
 import NewMeasureForm from '../screens/NewMeasureForm';
 import ReportForm from '../screens/ReportForm';
+import History from '../screens/History';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -50,19 +51,13 @@ export default function TabRoutes() {
             />
             <Tab.Screen
                 name="Histórico"
-                listeners={{
-                    tabPress: (e) => {
-                        e.preventDefault();
-                        Alert.alert('Histórico', 'Funcionalidade ainda não implementada.');
-                    },
-                }}
+                component={History}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="time-outline" size={size} color={color} />
                     ),
                 }}
             >
-                {() => null}
             </Tab.Screen>
             <Tab.Screen
                 name="Reportar"

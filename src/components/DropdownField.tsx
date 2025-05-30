@@ -16,7 +16,7 @@ const DropdownField: React.FC<DropdownFieldProps> = ({ title, selectedValue, onV
         <Container>
             <Title>{title}</Title>
             <Dropdown
-                itemContainerStyle={{ backgroundColor: theme.colors.background }}
+                containerStyle={{ borderRadius: 8, backgroundColor: theme.colors.background }}
                 itemTextStyle={{ color: theme.colors.primary, fontFamily: theme.fonts.regular, fontSize: 14 }}
                 selectedTextStyle={{ color: theme.colors.primary, fontFamily: theme.fonts.regular, fontSize: 14 }}
                 placeholderStyle={{ color: '#717171', fontFamily: theme.fonts.regular, fontSize: 14 }}
