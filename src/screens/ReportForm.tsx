@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { TouchableWithoutFeedback, Keyboard, View, Text, Pressable } from "react-native";
-import styled from "styled-components";
+import { TouchableWithoutFeedback, Keyboard } from "react-native";
+import styled from "styled-components/native";
 import theme from "../styles/theme";
 import InputField from "../components/InputField";
 import DropdownField from "../components/DropdownField";
@@ -59,14 +59,14 @@ const ReportForm = () => {
     );
 }
 
-const Container = styled(View)`
+const Container = styled.View`
     flex: 1;
     padding: 72px 32px;
     background-color: ${theme.colors.background};
     gap: 24px;
 `;
 
-const Header = styled(Text)`
+const Header = styled.Text`
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.bold};
     font-size: 28px;

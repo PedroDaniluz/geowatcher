@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { TouchableWithoutFeedback, Keyboard, View, Text, Pressable } from "react-native";
+import { TouchableWithoutFeedback, Keyboard, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import theme from "../styles/theme";
 import InputField from "../components/InputField";
 import SubmitButton from "../components/SubmitButton";
@@ -74,21 +74,21 @@ const NewMeasureForm = () => {
     );
 }
 
-const Container = styled(View)`
+const Container = styled.View`
     flex: 1;
     padding: 72px 32px;
     background-color: ${theme.colors.background};
     gap: 24px;
 `;
 
-const Header = styled(Text)`
+const Header = styled.Text`
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.bold};
     font-size: 28px;
     margin-bottom: 8px;
 `;
 
-const BackButton = styled(View) <{ pressed?: boolean }>`
+const BackButton = styled.View <{ pressed?: boolean }>`
     justify-content: center;
     align-items: center;
     width: 40px;

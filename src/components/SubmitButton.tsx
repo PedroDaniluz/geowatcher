@@ -33,7 +33,7 @@ const StyledButton = styled.View<{ pressed: boolean }>`
     opacity: ${({ pressed }) => (pressed ? 0.9 : 1)};
 `;
 
-const ButtonText = styled(Text)`
+const ButtonText = styled.Text`
     font-size: 14px;
     font-family: ${theme.fonts.semiBold};
     color: ${theme.colors.background};

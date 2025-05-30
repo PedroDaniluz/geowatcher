@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, FlatList, SafeAreaView } from "react-native";
+import { Text, FlatList } from "react-native";
 import { useFocusEffect } from '@react-navigation/native';
 import styled from "styled-components/native";
 import theme from "../styles/theme";
@@ -58,14 +58,14 @@ const History = () => {
     );
 };
 
-const Container = styled(View)`
+const Container = styled.View`
     flex: 1;
     padding: 72px 0;
     background-color: ${theme.colors.background};
     gap: 24px;
 `;
 
-const ButtonWrapper = styled(SafeAreaView)`
+const ButtonWrapper = styled.SafeAreaView`
     position: absolute;
     left: 0;
     right: 0;
@@ -74,7 +74,7 @@ const ButtonWrapper = styled(SafeAreaView)`
     background-color: ${theme.colors.background};
 `;
 
-const Header = styled(Text)`
+const Header = styled.Text`
     padding: 0 32px;
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.bold};
@@ -82,7 +82,7 @@ const Header = styled(Text)`
     margin-bottom: 8px;
 `;
 
-const HistoryItem = styled(View)`
+const HistoryItem = styled.View`
     padding: 0 32px;
     margin-bottom: 24px;
 `;

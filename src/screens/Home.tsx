@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { View, Text, Pressable } from "react-native";
+import { Pressable } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import styled from "styled-components";
+import styled from "styled-components/native";
 import theme from "../styles/theme";
 import StateCard from "../components/StateCard";
 import LastMeasureCard from "../components/LastMeasureCard";
@@ -68,21 +68,21 @@ const Home = () => {
     );
 }
 
-const Container = styled(View)`
+const Container = styled.View`
     flex: 1;
     padding: 72px 32px;
     background-color: ${theme.colors.background};
     gap: 24px;
 `;
 
-const Header = styled(Text)`
+const Header = styled.Text`
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.bold};
     font-size: 28px;
     margin-bottom: 8px;
 `;
 
-const StyledButton = styled(View) <{ pressed: boolean }>`
+const StyledButton = styled.View <{ pressed: boolean }>`
     width: 100%;
     border: 1px solid ${theme.colors.primary};
     align-items: center;
@@ -93,7 +93,7 @@ const StyledButton = styled(View) <{ pressed: boolean }>`
     opacity: ${({ pressed }) => (pressed ? 0.8 : 1)};
 `;
 
-const ButtonText = styled(Text)`
+const ButtonText = styled.Text`
     font-size: 16px;
     font-family: ${theme.fonts.semiBold};
     color: ${theme.colors.primary};

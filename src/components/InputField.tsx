@@ -1,4 +1,4 @@
-import { View, TextInput, Text } from "react-native";
+import { View } from "react-native";
 import styled from "styled-components/native";
 import theme from "../styles/theme";
 
@@ -34,14 +34,14 @@ const InputField: React.FC<InputFieldProps> = ({
     );
 };
 
-const Title = styled(Text)`
+const Title = styled.Text`
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.medium};
     font-size: 16px;
     margin-bottom: 8px;
 `;
 
-const StyledInput = styled(TextInput)`
+const StyledInput = styled.TextInput`
     width: 100%;
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.regular};

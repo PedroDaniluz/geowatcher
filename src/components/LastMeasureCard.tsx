@@ -1,5 +1,5 @@
 import { View, Text, Image } from "react-native";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import theme from "../styles/theme";
 
 interface LastMeasureCardProps {
@@ -25,7 +25,7 @@ const StateCard: React.FC<LastMeasureCardProps> = ({ locality, humity, inclinati
     )
 }
 
-const Card = styled(View)`
+const Card = styled.View`
     width: 100%;
     padding: 16px;
     gap: 12px;
@@ -39,19 +39,19 @@ const Card = styled(View)`
     elevation: 4;
 `;
 
-const CardTitle = styled(Text)`
+const CardTitle = styled.Text`
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.bold};
     font-size: 20px;
 `;
 
-const CardSubtitle = styled(Text)`
+const CardSubtitle = styled.Text`
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.light};
     font-size: 12px;
 `;
 
-const CardMeasure = styled(View)`
+const CardMeasure = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

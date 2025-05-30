@@ -1,6 +1,5 @@
-import { Text, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import styled from "styled-components";
+import styled from "styled-components/native";
 import theme from "../styles/theme";
 
 interface StateCardProps {
@@ -22,7 +21,7 @@ const StateCard: React.FC<StateCardProps> = ({ isSafe }) => {
     )
 }
 
-const Card = styled(View)`
+const Card = styled.View`
     width: 100%;
     padding: 16px;
     flex-direction: row;
@@ -38,17 +37,17 @@ const Card = styled(View)`
     elevation: 4;
 `;
 
-const CardText = styled(View)`
+const CardText = styled.View`
     gap: 8px;
 `;
 
-const CardHeader = styled(Text)`
+const CardHeader = styled.Text`
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.bold};
     font-size: 20px;
 `;
 
-const CardState = styled(Text) <{ isSafe?: boolean }>`
+const CardState = styled.Text <{ isSafe?: boolean }>`
     color: ${({ isSafe }) => isSafe ? theme.colors.secundary : 'red'};
     font-family: ${theme.fonts.extraBold};
     font-size: 44px;

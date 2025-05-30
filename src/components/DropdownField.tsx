@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import styled from 'styled-components/native';
 import theme from '../styles/theme';
@@ -31,13 +30,13 @@ const DropdownField: React.FC<DropdownFieldProps> = ({ title, selectedValue, onV
     );
 };
 
-const Container = styled(View)`
+const Container = styled.View`
     border-bottom-width: 1px;
     border-bottom-color: ${theme.colors.primary};
     padding-bottom: 8px;
 `;
 
-const Title = styled(Text)`
+const Title = styled.Text`
     color: ${theme.colors.primary};
     font-family: ${theme.fonts.medium};
     font-size: 16px;
