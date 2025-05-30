@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/logo.png" alt="Exemplo imagem" width="60%" />
+  <img src="./assets/logo2.png" alt="Exemplo imagem" width="60%" />
 </div>
 
 <br>
@@ -30,7 +30,7 @@
 
 - [Node.js](https://nodejs.org/)
 - [Expo CLI](https://docs.expo.dev/get-started/installation/)
-- [Gerenciador de pacotes: npm ou yarn]
+- [Gerenciador de pacotes: [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) ou [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)]
 
 <h2 id="instalação">🚀 Instalação</h2>
 
@@ -71,3 +71,28 @@ yarn
 6. Para criar e gerenciar simuladores iOS, utilize o Xcode no macOS. Consulte a [documentação oficial da Apple](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device).
 
 > **Observação:** Certifique-se de que todas as dependências estejam instaladas e o ambiente configurado corretamente.
+
+
+<h2 id="uso">🕹️ Como usar</h2>
+
+Após iniciar o app, você terá acesso às seguintes funcionalidades principais:
+
+- **Tela de Boas-vindas:**  
+  Toque em "Aceder ao painel" para acessar o painel principal.
+
+- **Painel de Riscos (Home):**  
+  - Visualize o estado atual do local monitorado (Seguro/Risco), baseado nos últimos dados de umidade e inclinação.
+  - Veja a última medição registrada.
+  - Toque em "Registrar nova medição" para inserir manualmente novos dados de sensores (umidade, inclinação e observações).
+
+- **Histórico:**  
+  - Acesse o histórico de todas as medições realizadas.
+  - Visualize data, hora, local, umidade e inclinação de cada registro.
+  - Toque em "Limpar histórico" para apagar todos os registros salvos.
+
+- **Reportar Incidente:**  
+  - Preencha o formulário para simular o reporte de um incidente (incêndio, inundação ou deslizamento).
+  - Escolha o tipo de socorro (polícia, bombeiros ou guarda civil) e adicione observações.
+  - Toque em "Enviar" para simular o envio do pedido de socorro (os dados são apenas exibidos no console).
+
+> **Observação:** Todos os dados inseridos são armazenados localmente no dispositivo e não são enviados para nenhum servidor externo.
