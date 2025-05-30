@@ -6,6 +6,7 @@ import styled from "styled-components";
 import theme from "../styles/theme";
 import InputField from "../components/InputField";
 import SubmitButton from "../components/SubmitButton";
+import { saveMeasurement } from '../services/measurements';
 
 // React Navigation
 import { RootStackParamList } from '../types/navigation';
@@ -17,6 +18,18 @@ const NewMeasureForm = () => {
     const [inclination, setInclination] = useState('');
     const [notes, setNotes] = useState('');
     const navigation = useNavigation<NavigationProps>();
+
+    async function handleSubmit() {
+        if (!humidity || !inclination) return; // Validação simples
+        await saveMeasurement({
+            humidity: Number(humidity),
+            inclination: Number(inclination),
+            notes,
+            date: new Date().toISOString(),
+            location: 'Aclimação, São Paulo - SP', // valor padrão
+        });
+        navigation.goBack();
+    }
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <Container>
@@ -54,13 +67,7 @@ const NewMeasureForm = () => {
                 />
                 <SubmitButton
                     text="Registrar medição"
-                    onClick={() => {
-                        console.log("Dados salvos:", {
-                            humidity,
-                            inclination,
-                            notes,
-                        });
-                    }}
+                    onClick={handleSubmit}
                 />
             </Container>
         </TouchableWithoutFeedback>

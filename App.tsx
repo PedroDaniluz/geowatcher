@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { seedMeasurements } from './src/services/measurements';
 import Routes from './src/navigation/AppNavigator';
 import {
   useFonts,
@@ -21,6 +22,11 @@ export default function App() {
     Poppins_700Bold,
     Poppins_800ExtraBold,
   });
+
+  useEffect(() => {
+    seedMeasurements();
+  }, []);
+
   if (!fontsLoaded) {
     return null;
   }
