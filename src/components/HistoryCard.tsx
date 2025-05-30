@@ -25,11 +25,11 @@ const HistoryCard: React.FC<HistoryCardProps> = ({ datetime, locality, humity, i
             </View>
             <CardMeasure>
                 <Measure>
-                    <Image source={require('../../assets/drops2.png')} style={{ width: 20, height: 22 }} />
+                    <Image source={require('../../assets/drops2.png')} style={{ width: 16, height: 17 }} />
                     <MeasureText>Umidade: {humity}%</MeasureText>
                 </Measure>
                 <Measure>
-                    <Image source={require('../../assets/ruler2.png')} style={{ width: 20, height: 20 }} />
+                    <Image source={require('../../assets/ruler2.png')} style={{ width: 16, height: 16 }} />
                     <MeasureText>Inclinação: {inclination}º</MeasureText>
                 </Measure>
             </CardMeasure>
