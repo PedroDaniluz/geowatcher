@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TouchableWithoutFeedback, Keyboard } from "react-native";
+import { TouchableWithoutFeedback, Keyboard, Platform } from "react-native";
 import styled from "styled-components/native";
 import theme from "../styles/theme";
 import InputField from "../components/InputField";
@@ -11,7 +11,8 @@ const ReportForm = () => {
     const [rescueType, setRescueType] = useState('');
     const [notes, setNotes] = useState('');
     return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        // Dispensa o teclado ao clicar fora do campo de texto - não funciona no web
+        <TouchableWithoutFeedback onPress={(Platform.OS === 'web') ? () => { } : Keyboard.dismiss}>
             <Container>
                 <Header>Mitigar danos</Header>
                 <DropdownField

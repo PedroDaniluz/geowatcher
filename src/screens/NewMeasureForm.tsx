@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TouchableWithoutFeedback, Keyboard, Pressable } from "react-native";
+import { TouchableWithoutFeedback, Keyboard, Pressable, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import styled from "styled-components/native";
@@ -31,7 +31,8 @@ const NewMeasureForm = () => {
         navigation.goBack();
     }
     return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        // Dispensa o teclado ao clicar fora do campo de texto - não funciona no web
+        <TouchableWithoutFeedback onPress={(Platform.OS === 'web') ? () => {} : Keyboard.dismiss}> 
             <Container>
                 <Pressable onPress={() => navigation.goBack()} style={{ width: 40}}>
                     {({ pressed }) => (
