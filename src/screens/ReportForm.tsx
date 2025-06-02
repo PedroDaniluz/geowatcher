@@ -1,15 +1,54 @@
 import { useState } from "react";
-import { TouchableWithoutFeedback, Keyboard, Platform } from "react-native";
+import { TouchableWithoutFeedback, Keyboard, Platform, Alert } from "react-native";
 import styled from "styled-components/native";
 import theme from "../styles/theme";
 import InputField from "../components/InputField";
 import DropdownField from "../components/DropdownField";
 import SubmitButton from "../components/SubmitButton";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../types/navigation';
+
+type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'ReportForm'>;
 
 const ReportForm = () => {
     const [incidentType, setIncidentType] = useState('');
     const [rescueType, setRescueType] = useState('');
     const [notes, setNotes] = useState('');
+    const navigation = useNavigation<NavigationProps>();
+
+    function getRescueLabel(value: string) {
+        switch (value) {
+            case "policia": return "Polícia";
+            case "bombeiros": return "Bombeiros";
+            case "guarda": return "Guarda Cívil";
+            case "analista": return "Análise Técnica";
+            default: return "";
+        }
+    }
+
+    function handleSubmit() {
+        if (!incidentType || !rescueType) {
+            Alert.alert("Preencha todos os campos obrigatórios.");
+            return;
+        }
+        Alert.alert(
+            "Alerta enviado",
+            `Foi encaminhado um alerta para ${getRescueLabel(rescueType)}.`,
+            [
+                {
+                    text: "OK",
+                    onPress: () => {
+                        setIncidentType('');
+                        setRescueType('');
+                        setNotes('');
+                        navigation.navigate('Main', { screen: 'HomeTab' });
+                    }
+                }
+            ]
+        );
+    }
+
     return (
         // Dispensa o teclado ao clicar fora do campo de texto - não funciona no web
         <TouchableWithoutFeedback onPress={(Platform.OS === 'web') ? () => { } : Keyboard.dismiss}>
@@ -37,6 +76,7 @@ const ReportForm = () => {
                         { label: "Polícia", value: "policia" },
                         { label: "Bombeiros", value: "bombeiros" },
                         { label: "Guarda Cívil", value: "guarda" },
+                        { label: "Análise Técnica", value: "analista" },
                     ]}
                 />
                 <InputField
@@ -47,13 +87,7 @@ const ReportForm = () => {
                 />
                 <SubmitButton
                     text="Enviar"
-                    onClick={() => {
-                        console.log("Socorro Solicitado", {
-                            incidentType,
-                            rescueType,
-                            notes,
-                        });
-                    }}
+                    onClick={handleSubmit}
                 />
             </Container>
         </TouchableWithoutFeedback>
