@@ -9,8 +9,9 @@
   <a href="#colaboradores">Participantes</a> •
   <a href="#pré-requisitos">Pré-requisitos</a> •
   <a href="#instalação">Instalação</a> •
-  <a href="#rodando-o-projeto">Rodando o Projeto</a> •
-  <a href="#uso">Como usar</a>
+  <a href="#rodando-o-projeto">Rodando o projeto</a> •
+  <a href="#uso">Como usar</a> •
+  <a href="#video">Vídeo demonstrativo</a>
 </div>
 
 <br>
@@ -97,3 +98,8 @@ Após iniciar o app, você terá acesso às seguintes funcionalidades principais
   - Toque em "Enviar" para simular o envio do pedido de socorro (os dados são apenas exibidos no console).
 
 > **Observação:** Todos os dados inseridos são armazenados localmente no dispositivo e não são enviados para nenhum servidor externo.
+
+<h2 id="video">🎥 Vídeo Demonstrativo</h2>
+Confira abaixo um vídeo curto apresentando as principais funcionalidades do app em ação:
+
+👉 [Clique aqui para assistir](https://www.youtube.com/watch?v=-1AhhSkmomo)
